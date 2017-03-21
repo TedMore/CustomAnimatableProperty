@@ -11,4 +11,11 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+#ifdef DEBUG
+#define NSLog NSLog(@"<---%s---line: %d--->",strrchr(__FILE__,'/'),__LINE__);NSLog
+#else
+#define NSLog //NSLog(@"<---%s---line: %d--->",strrchr(__FILE__,'/'),__LINE__);NSLog
+#endif
+
 #endif
